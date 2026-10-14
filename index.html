@@ -52,6 +52,8 @@ p{margin:0}
 .lede{color:var(--muted);max-width:62ch;font-size:1.06rem}
 .head{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:16px 48px;align-items:end;margin-bottom:48px}
 .head .eyebrow{grid-column:1/-1}
+.wider{grid-column:1/-1;font-size:clamp(1.1rem,2vw,1.3rem);font-weight:500;letter-spacing:-.01em;max-width:60ch;padding:18px 0 22px;margin-bottom:8px;border-bottom:1px solid var(--line)}
+.wider span{color:var(--muted);font-weight:400}
 @media (max-width:860px){.head{grid-template-columns:1fr}}
 
 .logo-mark{display:inline-block;aspect-ratio:196/160;background:currentColor;-webkit-mask:var(--mark) center/contain no-repeat;mask:var(--mark) center/contain no-repeat}
@@ -161,6 +163,17 @@ nav.links a:hover{color:var(--ink)}
 .earn .close{color:var(--ink);font-weight:500}
 .map-note{margin-top:48px;font-size:.93rem;color:var(--muted);border-left:2px solid var(--line);padding-left:16px;max-width:64ch}
 
+.scale{margin-top:56px;display:grid;grid-template-columns:minmax(0,.55fr) minmax(0,1.45fr);gap:40px;align-items:start;padding:clamp(24px,4vw,40px);border:1px solid var(--line);border-radius:16px;background:var(--surface)}
+@media (max-width:760px){.scale{grid-template-columns:1fr;gap:20px}}
+.scale-num{display:grid;gap:4px}
+.scale-num b{font-size:clamp(3.2rem,8vw,5rem);font-weight:600;letter-spacing:-.045em;line-height:1;font-variant-numeric:tabular-nums;margin-top:10px}
+.scale-num .unit{font-size:1rem;color:var(--muted)}
+.scale-body{display:grid;gap:12px;min-width:0}
+.scale-body h3{font-size:clamp(1.2rem,2.2vw,1.45rem)}
+.scale-body p{color:var(--muted);max-width:66ch}
+.scale-body .math{font-family:var(--f-mono);font-size:.8rem;color:var(--faint);padding:10px 12px;border-radius:8px;background:var(--sunk);overflow-wrap:anywhere}
+.example{display:grid;gap:8px;padding:16px 18px;border-left:2px solid var(--brand-text);background:var(--sunk);border-radius:0 10px 10px 0}
+.example p{color:var(--ink)}
 .ev-grid{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:40px;align-items:start}
 @media (max-width:880px){.ev-grid{grid-template-columns:1fr}}
 .luma{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:28px;display:grid;gap:14px}
@@ -279,6 +292,7 @@ footer .logo-word{height:14px;color:var(--ink)}
     <div class="wrap">
       <div class="head">
         <p class="eyebrow">Guide yourself</p>
+        <p class="wider">Tech is far bigger than web development, app development, video editing and competitive programming. <span>Cloud, data, security, research, embedded systems and more are open to you.</span></p>
         <h2>Two halves. Same starting point.</h2>
         <p class="lede">Most CS students in Bangladesh end up choosing between building a career in industry and going abroad for a master's or PhD. Pick a path to see its stops. Nobody is waiting at the end to grade you.</p>
       </div>
@@ -304,6 +318,24 @@ footer .logo-word{height:14px;color:var(--ink)}
         <div class="earn" id="path-earn"></div>
       </div>
       <p class="map-note">This is a map, not a syllabus. Years are rough. Skip stops you've passed, stay longer where you need to, and switch paths whenever you want. Ask seniors on Discord when you're stuck on a specific problem.</p>
+      <div class="scale">
+        <div class="scale-num"><span class="eyebrow">Think in orders of magnitude</span><b>5,000</b><span class="unit">years</span></div>
+        <div class="scale-body">
+          <h3>One idea can be worth more than a lifetime of salary. Several lifetimes, in fact.</h3>
+          <p>At ৳20 lakh a month, the top end of corporate pay in Bangladesh, it would take about 5,000 years to earn one billion dollars. A product that solves a real problem for enough people can create that much value in a decade.</p>
+          <p class="math">৳20 lakh × 12 = ৳2.4 crore a year · $1 billion ≈ ৳12,000 crore at ~৳120/$ · 12,000 ÷ 2.4 = 5,000 years</p>
+          <div class="example">
+            <span class="eyebrow">Real example · Cursor</span>
+            <p>Cursor was started by four MIT students in 2022. One of them, Sualeh Asif, is from Karachi. By November 2025, Forbes estimated each co-founder's stake at over $1.3 billion, at age 25 or 26. In August 2026, SpaceX completed its $60 billion acquisition of the company, which Forbes estimated would put each founder at about $2.7 billion.</p>
+            <div class="res" style="--c:var(--ink)">
+              <a href="https://www.forbes.com/sites/rashishrivastava/2025/11/13/four-cofounders-of-popular-ai-coding-tool-cursor-are-now-billionaires/" target="_blank" rel="noopener">Forbes: Cursor's co-founders are now billionaires</a>
+              <a href="https://finance.yahoo.com/technology/ai/articles/spacex-acquires-cursor-ai-coding-114028456.html" target="_blank" rel="noopener">SpaceX deal doubles their net worth</a>
+              <a href="https://lnkd.in/p/gBKVx5vK" target="_blank" rel="noopener">The story on LinkedIn</a>
+            </div>
+          </div>
+          <p>Most ventures fail, and that is part of the deal. You only find out by building. Whichever path you choose, keep a side project going.</p>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -352,6 +384,7 @@ footer .logo-word{height:14px;color:var(--ink)}
           <button type="button" data-f="youtube" aria-pressed="false">YouTube</button>
           <button type="button" data-f="instagram" aria-pressed="false">Instagram</button>
           <button type="button" data-f="linkedin" aria-pressed="false">LinkedIn</button>
+          <button type="button" data-f="x" aria-pressed="false">X</button>
         </div>
         <a class="fn-suggest" href="https://discord.gg/uTDCWqpTVX" target="_blank" rel="noopener">Suggest one on Discord ↗</a>
       </div>
@@ -442,7 +475,7 @@ const CONFIG = {
   youtubeChannel: "https://www.youtube.com/@mitul_shahriyar",
   youtubePlaylists: [        // e.g. { title: "Claude Dhaka Meetup", note: "6 videos", url: "https://www.youtube.com/playlist?list=..." }
   ],
-  /* Field Notes. type: "youtube" | "instagram" | "linkedin"
+  /* Field Notes. type: "youtube" | "instagram" | "linkedin" | "x"
      topic: "Career" | "Higher study" | "Mindset" | "How tech works" (or your own) */
   fieldNotes: [
     { type:"youtube", topic:"Mindset", title:"Stanford Commencement Address", by:"Steve Jobs", note:"Connecting the dots looking backwards, and why you can't plan every step in advance.", url:"https://www.youtube.com/watch?v=UF8uR6Z6KLc" },
@@ -591,7 +624,8 @@ pl.insertAdjacentHTML("afterbegin", `<div class="yt">
 const SRC = {
   youtube:   { name:"YouTube",   verb:"Watch on YouTube",   icon:`<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="1.5" y="5" width="21" height="14" rx="4" fill="var(--ink)"/><path d="M10 9 L15.5 12 L10 15 Z" fill="var(--bg)"/></svg>` },
   instagram: { name:"Instagram", verb:"Watch on Instagram", icon:`<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5.5" fill="none" stroke="var(--ink)" stroke-width="2"/><circle cx="12" cy="12" r="4" fill="none" stroke="var(--ink)" stroke-width="2"/><circle cx="17.2" cy="6.8" r="1.3" fill="var(--ink)"/></svg>` },
-  linkedin:  { name:"LinkedIn",  verb:"Read on LinkedIn",   icon:`<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="4" fill="var(--ink)"/><rect x="6" y="10" width="2.6" height="8" fill="var(--bg)"/><circle cx="7.3" cy="7" r="1.6" fill="var(--bg)"/><path d="M11 10h2.5v1.2c.5-.8 1.5-1.4 2.8-1.4 2 0 3 1.3 3 3.6V18h-2.6v-4.2c0-1.1-.4-1.8-1.4-1.8s-1.7.7-1.7 1.9V18H11z" fill="var(--bg)"/></svg>` }
+  x:         { name:"X",         verb:"Read on X",          icon:`<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="4" fill="var(--ink)"/><path d="M7 6.5h2.6l2.7 3.8 3.2-3.8h1.6l-4.1 4.9 4.6 6.1h-2.6l-3-4.1-3.5 4.1H6.9l4.4-5.2z" fill="var(--bg)"/></svg>` },
+  linkedin:  { name:"LinkedIn",  verb:"Read on LinkedIn",  icon:`<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="4" fill="var(--ink)"/><rect x="6" y="10" width="2.6" height="8" fill="var(--bg)"/><circle cx="7.3" cy="7" r="1.6" fill="var(--bg)"/><path d="M11 10h2.5v1.2c.5-.8 1.5-1.4 2.8-1.4 2 0 3 1.3 3 3.6V18h-2.6v-4.2c0-1.1-.4-1.8-1.4-1.8s-1.7.7-1.7 1.9V18H11z" fill="var(--bg)"/></svg>` }
 };
 function renderNotes(f){
   const list = CONFIG.fieldNotes.filter(n => f === "all" || n.type === f);
